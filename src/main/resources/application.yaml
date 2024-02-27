@@ -1,1 +1,23 @@
-
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  data:
+    mongodb:
+      auto-index-creation: true
+      uri: "mongodb://leonardo:123456@localhost:27017/bankBalance?authSource=admin"
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/bankBalance
+    username: leonardo
+    password: 123456
+  database:
+    driverClassName: org.postgresql.Driver
+database:
+  mongo:
+    active: false

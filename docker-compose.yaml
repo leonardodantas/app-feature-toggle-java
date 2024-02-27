@@ -1,0 +1,37 @@
+version: '3'
+services:
+  bank-balance-postgres:
+    restart: always
+    image: postgres
+    environment:
+      DATABASE_HOST: "127.0.0.1"
+      POSTGRES_USER: "leonardo"
+      POSTGRES_DB: "bankBalance"
+      POSTGRES_PASSWORD: "123456"
+    ports:
+      - "5432:5432"
+    volumes:
+      - /private/var/lib/postgresql:/var/lib/postgresql
+  bank-balance-pgadmin:
+    restart: always
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "leonardo@dantas.com.br"
+      PGADMIN_DEFAULT_PASSWORD: "123456"
+    ports:
+      - "16543:80"
+    depends_on:
+      - bank-balance-postgres
+  mongodb:
+    image: mongo:4.2.23
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=leonardo
+      - MONGO_INITDB_ROOT_PASSWORD=123456
+    volumes:
+      - /private/var/lib/mongodb:/var/lib/mongodb
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"

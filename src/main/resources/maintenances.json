@@ -1,0 +1,122 @@
+[
+  {
+    "code": "XYZ789",
+    "description": "Troca de óleo e filtro realizada.",
+    "carPlate": "ABC-1234",
+    "date": "2024-02-25"
+  },
+  {
+    "code": "DEF456",
+    "description": "Alinhamento e balanceamento efetuados.",
+    "carPlate": "ABC-1234",
+    "date": "2024-02-26"
+  },
+  {
+    "code": "GHI123",
+    "description": "Substituição das pastilhas de freio.",
+    "carPlate": "ABC-1234",
+    "date": "2024-02-27"
+  },
+  {
+    "code": "ABC321",
+    "description": "Troca de velas e cabos de ignição.",
+    "carPlate": "ABC-1234",
+    "date": "2024-02-28"
+  },
+  {
+    "code": "JKL987",
+    "description": "Reparo no sistema de ar condicionado.",
+    "carPlate": "ABC-1234",
+    "date": "2024-02-29"
+  },
+  {
+    "code": "MNO654",
+    "description": "Inspeção e substituição do filtro de ar.",
+    "carPlate": "XYZ-5678",
+    "date": "2024-03-01"
+  },
+  {
+    "code": "PQR321",
+    "description": "Manutenção no sistema de suspensão.",
+    "carPlate": "XYZ-5678",
+    "date": "2024-03-02"
+  },
+  {
+    "code": "STU789",
+    "description": "Verificação e ajuste na correia dentada.",
+    "carPlate": "XYZ-5678",
+    "date": "2024-03-03"
+  },
+  {
+    "code": "VWX456",
+    "description": "Substituição do fluido de freio.",
+    "carPlate": "XYZ-5678",
+    "date": "2024-03-04"
+  },
+  {
+    "code": "YZA123",
+    "description": "Revisão geral e limpeza do sistema de injeção.",
+    "carPlate": "XYZ-5678",
+    "date": "2024-03-05"
+  },
+  {
+    "code": "BCD789",
+    "description": "Troca do filtro de combustível.",
+    "carPlate": "JKL-4321",
+    "date": "2024-03-06"
+  },
+  {
+    "code": "EFG654",
+    "description": "Verificação e substituição de fluidos.",
+    "carPlate": "JKL-4321",
+    "date": "2024-03-07"
+  },
+  {
+    "code": "HIJ321",
+    "description": "Inspeção da bateria e carga.",
+    "carPlate": "JKL-4321",
+    "date": "2024-03-08"
+  },
+  {
+    "code": "KLM987",
+    "description": "Manutenção nos freios ABS.",
+    "carPlate": "JKL-4321",
+    "date": "2024-03-09"
+  },
+  {
+    "code": "NOP456",
+    "description": "Reparo no sistema de ignição eletrônica.",
+    "carPlate": "JKL-4321",
+    "date": "2024-03-10"
+  },
+  {
+    "code": "QRS123",
+    "description": "Troca do sensor de temperatura.",
+    "carPlate": "PQR-9876",
+    "date": "2024-03-11"
+  },
+  {
+    "code": "TUV789",
+    "description": "Verificação e ajuste da pressão dos pneus.",
+    "carPlate": "PQR-9876",
+    "date": "2024-03-12"
+  },
+  {
+    "code": "WXY654",
+    "description": "Substituição das palhetas do limpador de para-brisa.",
+    "carPlate": "PQR-9876",
+    "date": "2024-03-13"
+  },
+  {
+    "code": "ZAB321",
+    "description": "Inspeção e reparo no sistema elétrico.",
+    "carPlate": "PQR-9876",
+    "date": "2024-03-14"
+  },
+  {
+    "code": "CDE987",
+    "description": "Troca do filtro do ar condicionado.",
+    "carPlate": "PQR-9876",
+    "date": "2024-03-15"
+  }
+]
