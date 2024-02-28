@@ -1,12 +1,11 @@
-package com.app.feature.toggle.config;
+package com.app.feature.toggle.config.jsons;
 
 import lombok.Getter;
 
 import java.time.LocalDate;
 
 @Getter
-public class Maintenance {
-
+public class MaintenanceJson {
     private String id;
     private String code;
     private String description;

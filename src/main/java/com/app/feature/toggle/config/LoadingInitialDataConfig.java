@@ -1,7 +1,11 @@
 package com.app.feature.toggle.config;
 
+import com.app.feature.toggle.config.jsons.ConfigJson;
+import com.app.feature.toggle.config.jsons.MaintenanceJson;
 import com.app.feature.toggle.infra.databases.mongo.CarMaintenanceDocument;
 import com.app.feature.toggle.infra.databases.mongo.CarMaintenanceMongoJPARepository;
+import com.app.feature.toggle.infra.databases.mongo.ConfigDocument;
+import com.app.feature.toggle.infra.databases.mongo.ConfigMongoJPARepository;
 import com.app.feature.toggle.infra.databases.postgres.CarMaintenanceEntity;
 import com.app.feature.toggle.infra.databases.postgres.CarMaintenancesPostgresJPARepository;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -24,18 +28,21 @@ public class LoadingInitialDataConfig {
     private static final String MONGO_DB = "MongoDB";
     private static final String POSTGRES_SQL = "PostgreSQL";
     private final ObjectMapper objectMapper;
-    private static final String json = "maintenances.json";
+    private static final String MAINTENANCES_JSON = "maintenances.json";
+    private static final String CONFIG_JSON = "config.json";
+
     private final CarMaintenanceMongoJPARepository carMaintenanceMongoJPARepository;
     private final CarMaintenancesPostgresJPARepository carMaintenancesPostgresJPARepository;
+    private final ConfigMongoJPARepository configMongoJPARepository;
 
     @PostConstruct
     public void init() {
         carMaintenanceMongoJPARepository.deleteAll();
         carMaintenancesPostgresJPARepository.deleteAll();
+        configMongoJPARepository.deleteAll();
 
-        getMaintenances()
+        getJsonAsListObject(MAINTENANCES_JSON, new TypeReference<List<MaintenanceJson>>() {})
                 .forEach(maintenance -> {
-
                     final var carMaintenanceMongo = CarMaintenanceDocument.builder()
                             .code(maintenance.getCode())
                             .description(maintenance.getDescription())
@@ -56,15 +63,23 @@ public class LoadingInitialDataConfig {
 
                     carMaintenancesPostgresJPARepository.save(carMaintenancePostgres);
                 });
+
+        getJsonAsListObject(CONFIG_JSON, new TypeReference<List<ConfigJson>>() {})
+                .forEach(config -> {
+                    final var configMongo = ConfigDocument.builder()
+                            .property(config.getProperty())
+                            .value(config.isValue())
+                            .build();
+                    configMongoJPARepository.save(configMongo);
+                });
     }
 
-    private List<Maintenance> getMaintenances() {
+    private <T> List<T> getJsonAsListObject(final String file, final TypeReference<List<T>> typeReference) {
         try {
-            final var path = Paths.get(Main.class.getClassLoader().getResource(json).toURI());
+            final var path = Paths.get(Main.class.getClassLoader().getResource(file).toURI());
             final var jsonContent = Files.readString(path);
 
-            return objectMapper.readValue(jsonContent, new TypeReference<>() {
-            });
+            return objectMapper.readValue(jsonContent, typeReference);
         } catch (final URISyntaxException | IOException e) {
             throw new RuntimeException(e);
         }
