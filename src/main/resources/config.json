@@ -1,0 +1,6 @@
+[
+  {
+    "property": "database.mongo.active",
+    "value": true
+  }
+]
