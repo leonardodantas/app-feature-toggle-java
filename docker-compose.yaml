@@ -9,7 +9,7 @@ services:
       POSTGRES_DB: "featureToggle"
       POSTGRES_PASSWORD: "123456"
     ports:
-      - "5432:5432"
+      - "54321:54321"
     volumes:
       - /private/var/lib/postgresql:/var/lib/postgresql
   feature-toggle-pgadmin:
