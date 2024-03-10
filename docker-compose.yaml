@@ -9,7 +9,7 @@ services:
       POSTGRES_DB: "featureToggle"
       POSTGRES_PASSWORD: "123456"
     ports:
-      - "54321:54321"
+      - "5433:5432"
     volumes:
       - /private/var/lib/postgresql:/var/lib/postgresql
   feature-toggle-pgadmin:
@@ -31,7 +31,3 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=123456
     volumes:
       - /private/var/lib/mongodb:/var/lib/mongodb
-  redis:
-    image: redis
-    ports:
-      - "6379:6379"
