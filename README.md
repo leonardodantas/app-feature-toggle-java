@@ -107,6 +107,7 @@ Inserindo dados em ambas as bases:
 
 ## Primeira Implementação.
 
+Branch da implementação: https://github.com/leonardodantas/app-feature-toggle-java
 
 A implementação inicial é bastante simples, fazendo uso da anotação @Value para extrair do arquivo application.yaml o valor correspondente à variável. Dessa forma, determinamos se a busca será realizada no PostgreSQL ou no MongoDB.
 
@@ -132,6 +133,8 @@ Em relação aos pontos positivos, destaca-se a simplicidade da abordagem. A for
 Contudo, há pontos negativos a serem ponderados. A rigidez na atualização é uma consideração importante, pois a falta de flexibilidade pode exigir um novo deployment da aplicação para alternar entre os bancos de dados. Além disso, a prática de alternância entre releases, embora seja prática para situações com duas releases distintas, pode se tornar menos eficiente em cenários que demandam alterações frequentes. Isso ocorre devido à necessidade de ações manuais para realizar a mudança do toggle.
 
 ## Segunda implementação.
+
+Branch da implementação: https://github.com/leonardodantas/app-feature-toggle-java/tree/feature/utilizando-banco-para-config
 
 Na segunda abordagem, optamos por utilizar uma fonte externa para armazenar e recuperar as configurações, sendo duas opções interessantes uma API externa ou um banco de dados. Neste caso específico, escolhemos o MongoDB para gerenciar e recuperar nossas configurações.
 
@@ -159,6 +162,7 @@ podem ser resolvidos com a utilização de cache.
 
 ## Terceira implementação.
 
+Branch da implementação: https://github.com/leonardodantas/app-feature-toggle-java/tree/feature/utilizando-unleash
 
 Na terceira abordagem, incorporamos a ferramenta Unleash, um gerenciador de feature toggle que se destaca por sua interface amigável e simples. Essa ferramenta permite a ativação e desativação de toggles de maneira fácil e prática. Suas informações são armazenadas em um banco de dados PostgreSQL, e uma documentação abrangente está disponível em https://docs.getunleash.io/. Além disso, a inicialização da ferramenta pode ser feita por meio do Docker Compose.
 
@@ -207,3 +211,25 @@ no seguinte repositorio do github https://github.com/leonardodantas/properties.
 
 Para acessar as configurações com sucesso precisamos iniciar em nossa maquina a
 seguinte aplicação https://github.com/leonardodantas/app-server-config-java.
+
+## Tecnologias
+
+<div style="display: inline_block">
+  <img align="center" alt="java" src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white" />
+  <img align="center" alt="spring" src="https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white" />
+  <img align="center" alt="swagger" src="https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white" />
+  <img align="center" alt="swagger" src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white" />
+  <img align="center" alt="swagger" src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" />
+  <img align="center" alt="swagger" src="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white" />
+</div>
+
+### :sunglasses: Autor
+
+Criado por Leonardo Rodrigues Dantas.
+
+[![Linkedin Badge](https://img.shields.io/badge/-Leonardo-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/leonardo-rodrigues-dantas/)](https://www.linkedin.com/in/leonardo-rodrigues-dantas/)
+[![Gmail Badge](https://img.shields.io/badge/-leonardordnt1317@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:leonardordnt1317@gmail.com)](mailto:leonardordnt1317@gmail.com)
+
+## Licença
+
+Este projeto esta sobe a licença MIT.
